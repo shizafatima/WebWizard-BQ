@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Youtube</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: medium;
+
+        }
+
+        .sidebar ul li:hover {
+            background-color: #ddd;
+            border-radius: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        img {
+            align-items: baseline;
+            justify-content: baseline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar flex justify-between items-center">
+        <div class="left-section flex items-center gap-0">
+            <button
+                class="toggleBtn cursor-pointer mr-[16px] bg-[#fff] p-[10px] border-none rounded-[5px] mt-[10px]"
+                id="toggle-button">&#9776;</button>
+            <img src="images/youtube logo.jpg" alt=" logo" class="h-6 w-auto object-container items-baseline">
+        </div>
+
+        <div class="center-section">
+            <div class="search-bar flex max-w-[600px]">
+                <input
+                    class="p-[8px] border border-[#ccc] border-r-none focus:outline-none rounded-tl-[20px] rounded-bl-[20px] max-w-[600px]"
+                    type="text" placeholder="Search">
+                <button
+                    class="py-[8px] px-[16px] border border-gray-300 bg-[#f8f8f8] rounded-tr-[20px] rounded-br-[20px] cursor-pointer hover:bg-[#ddd]"
+                    type="submit"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="right-section">
+
+            <button
+                class="right-btn hover:bg-[#ddd] ml-[12px] py-[8px] px-[12px] bg-transparent border border-gray-300 cursor-pointer rounded-full">+
+                Create</button>
+            <button
+                class="bell bg-transparent border-none hover:bg-[#ddd] hover:rounded-[20px] ml-[2px] p-[8px] text-[15px] mr-[0] ml-[2px] items-baseline"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.292-.538 1.292H5.538C5 18 5 17.301 5 16.708c0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365ZM8.733 18c.094.852.306 1.54.944 2.112a3.48 3.48 0 0 0 4.646 0c.638-.572 1.236-1.26 1.33-2.112h-6.92Z"/>
+                  </svg>
+                  
+            </button>
+            <button
+                class="right-btn hover:bg-[#ddd] ml-[6px] py-[8px] px-[12px] bg-transparent border border-gray-300 cursor-pointer rounded-full items-baseline">
+                Sign in</button>
+        </div>
+    </div>
+
+    <div class="main-container flex">
+        <div class="sidebar pt-[10px] w-[250px] bg-[#fff] border-r border-gray-300 h-screen overflow-auto">
+            <ul>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Home</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Shorts</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Subscriptions</a></li>
+            </ul>
+
+            <button
+                class="toggleBtn text-lg cursor-pointer mr-[16px] bg-[#fff] p-[10px] border-none rounded-[5px] mt-[10px]">
+                <h4 class="font-bold p-[5px] text-[15px]">You</h4>
+            </button>
+            <ul class="list-none">
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">History</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Playlists</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Your videos</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Watch later</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Liked videos</a></li>
+            </ul>
+
+            <button
+                class="toggleBtn text-lg cursor-pointer mr-[16px] bg-[#fff] p-[10px] border-none rounded-[5px] mt-[10px]">
+                <h4 class="font-bold p-[5px] text-[15px]">Subscriptions</h4>
+            </button>
+
+            <ul class="list-none">
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Panaversity Urdu</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Apna College</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Gate Smashers</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">CodeWithHarry</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Tech With Tim</a></li>
+            </ul>
+
+            <button
+                class="toggleBtn text-lg cursor-pointer mr-[16px] bg-[#fff] p-[10px] border-none rounded-[5px] mt-[10px]">
+                <h4 class="font-bold p-[5px] text-[15px]">Explore</h4>
+            </button>
+            <ul class="list-none">
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Trending</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Music</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Gaming</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">News</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Sports</a></li>
+            </ul>
+
+            <button
+                class="toggleBtn text-lg cursor-pointer mr-[16px] bg-[#fff] p-[10px] border-none rounded-[5px] mt-[10px]">
+                <h4 class="font-bold p-[5px] text-[15px]">More from YouTube</h4>
+            </button>
+            <ul class="list-none">
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">YouTube Premium</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">YouTube Studio</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">YouTube Music</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">YouTube Kids</a></li>
+            </ul>
+
+            <ul class="list-none">
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Settings</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Report History</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Help</a></li>
+                <li class="py-[12px] px-[24px] flex items-center cursor-pointer"><a href="#">Send feedback</a></li>
+            </ul>
+        </div>
+
+
+        <div class="main-content flex-1  h-screen overflow-y-auto">
+            <div class="filter-bar ml-[5px] mt-4px">
+                <button
+                    class="filter-active ml-[2px] py-[4px] px-[8px] bg-[#e7e6e6] cursor-pointer rounded-[8px] border-none gap-[10px] mb-[5px] hover:bg-[#ddd] bg-black text-white">All</button>
+                <button
+                    class="filter-btn ml-[2px] py-[4px] px-[8px] bg-[#e7e6e6] cursor-pointer rounded-[8px] border-none gap-[15px] mb-[5px] hover:bg-[#ddd]">AI</button>
+                <button
+                    class="filter-btn ml-[2px] py-[6px] px-[8px] bg-[#e7e6e6] cursor-pointer rounded-[8px] border-none gap-[15px] mb-[5px] hover:bg-[#ddd]">Computer
+                    Programming</button>
+                <button
+                    class="filter-btn ml-[2px] py-[6px] px-[8px] bg-[#e7e6e6] cursor-pointer rounded-[8px] border-none gap-[15px] mb-[5px] hover:bg-[#ddd]">News</button>
+                <button
+                    class="filter-btn ml-[2px] py-[6px] px-[8px] bg-[#e7e6e6] cursor-pointer rounded-[8px] border-none gap-[15px] mb-[5px] hover:bg-[#ddd]">Past
+                    Papers</button>
+                <button
+                    class="filter-btn ml-[2px] py-[6px] px-[8px] bg-[#e7e6e6] cursor-pointer rounded-[8px] border-none gap-[15px] mb-[5px] hover:bg-[#ddd]">Live</button>
+                <button
+                    class="filter-btn ml-[2px] py-[6px] px-[8px] bg-[#e7e6e6] cursor-pointer rounded-[8px] border-none gap-[15px] mb-[5px] hover:bg-[#ddd]">Podcast</button>
+                <button
+                    class="filter-btn ml-[2px] py-[6px] px-[8px] bg-[#e7e6e6] cursor-pointer rounded-[8px] border-none gap-[15px] mb-[5px] hover:bg-[#ddd]">Pakistani
+                    dramas</button>
+                <button
+                    class="filter-btn ml-[2px] py-[6px] px-[8px] bg-[#e7e6e6] cursor-pointer rounded-[8px] border-none gap-[15px] mb-[5px] hover:bg-[#ddd]">Recently
+                    Uploaded</button>
+                <button
+                    class="filter-btn ml-[2px] py-[6px] px-[8px] bg-[#e7e6e6] cursor-pointer rounded-[8px] border-none gap-[15px] mb-[5px] hover:bg-[#ddd]">Watched</button>
+            </div>
+
+            <div class="grid-container grid grid-cols-[repeat(auto-fit,310px)] grid-rows-[repeat(2, 300px)] gap-[15px] ml-[8px]">
+                <div class="video-card bg-[#fff] rounded-[8px] overflow-hidden shadow-[0 1px 5px rgba(0, 0, 0, 0.1)] pb-[8px] transition-transform duration-300 hover:scale-105 hover:shadow-lg mt-[10px] hover:transform-[scale(1.05)] hover:shadow-[0 8px 20px rgba(0, 0, 0, 0.2)]"
+                    id="card1">
+                    <img class="w-[100%] h-auto" src="images\Parwarish.jpg" alt="parwarish">
+                    <h5 class="mx-[0] my-[8px] text-[12px] p-[5px] font-bold">Parwarish Episode 3 | Aina Asif | Samar Jafri | 14
+                        April 2025 | ARY Digital Drama</h5>
+                    <p class="my-[0] mx-[8px] text-[11px] p-[5px] text-[#606060]">ARY Digital HD • 902K views • 3 hours
+                        ago</p>
+                </div>
+                <div class="video-card bg-[#fff] rounded-[8px] overflow-hidden shadow-[0 1px 5px rgba(0, 0, 0, 0.1)] pb-[8px] transition-transform duration-300 hover:scale-105 hover:shadow-lg mt-[10px]"
+                    id="card2">
+                    <img class="w-[100%] h-auto" src="images\AIAgents.jpg" alt="Ai-agents">
+                    <h5 class="mx-[0] my-[8px] text-[12px] p-[5px] font-bold">What are AI Agents?</h5>
+                    <p class="my-[0] mx-[8px] text-[11px] p-[5px] text-[#606060]">IBM Techonology • 1.4M views • 8
+                        months ago</p>
+                </div>
+
+                <div class="video-card bg-[#fff] rounded-[8px] overflow-hidden shadow-[0 1px 5px rgba(0, 0, 0, 0.1)] pb-[8px] transition-transform duration-300 hover:scale-105 hover:shadow-lg mt-[10px]"
+                    id="card3">
+                    <img class="w-[100%] h-auto" src="images\codewithharry.jpg" alt="codeiwthharry">
+                    <h5 class="mx-[0] my-[8px] text-[12px] p-[5px] font-bold">The Ultimate Python Programming Roadmap (Before you
+                        Start)🐍</h5>
+                    <p class="my-[0] mx-[8px] text-[11px] p-[5px] text-[#606060]">CodeWithHarry • 957K views • 11 months
+                        ago</p>
+                </div>
+
+                <div class="video-card bg-[#fff] rounded-[8px] overflow-hidden shadow-[0 1px 5px rgba(0, 0, 0, 0.1)] pb-[8px] transition-transform duration-300 hover:scale-105 hover:shadow-lg mt-[10px]"
+                    id="card3">
+                    <img class="w-[100%] h-auto" src="images\telefilm.jpg" alt="telefilm">
+                    <h5 class="mx-[0] my-[8px] text-[12px] p-[5px] font-bold">TELEFILM HANGOR S-131 | 1971 WAR | TRUE STORY |
+                        PAKISTAN NAVY SUBMARINE FORCE</h5>
+                    <p class="my-[0] mx-[8px] text-[11px] p-[5px] text-[#606060]">Pakistan Navy • 4.5M views • 3 years
+                        ago</p>
+                </div>
+
+                <div class="video-card bg-[#fff] rounded-[8px] overflow-hidden shadow-[0 1px 5px rgba(0, 0, 0, 0.1)] pb-[8px] transition-transform duration-300 hover:scale-105 hover:shadow-lg mt-[10px]"
+                    id="card4">
+                    <img class="w-[100%] h-auto" src="images\ielts.jpg" alt="ielts">
+                    <h5 class="mx-[0] my-[8px] text-[12px] p-[5px] font-bold">IELTS Speaking test band score of 9 with feedback
+                    </h5>
+                    <p class="my-[0] mx-[8px] text-[11px] p-[5px] text-[#606060]">Ross Ielts Academy • 10M views • 4
+                        years ago </p>
+                </div>
+                <div class="video-card bg-[#fff] rounded-[8px] overflow-hidden shadow-[0 1px 5px rgba(0, 0, 0, 0.1)] pb-[8px] transition-transform duration-300 hover:scale-105 hover:shadow-lg mt-[10px]"
+                    id="card5">
+                    <img class="w-[100%] h-auto" src="images\jhol.jpg" alt="jhol">
+                    <h5 class="mx-[0] my-[8px] text-[12px] p-[5px] font-bold">Jhol x Ishq Mashup | Amtee | Maanu x Annural Khalid
+                        | Faheem Abdullah | Tujhe Bhula Diya</h5>
+                    <p class="my-[0] mx-[8px] text-[11px] p-[5px] text-[#606060]"> AMTEE • 393K views • 10 days ago</p>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

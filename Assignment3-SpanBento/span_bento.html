@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Span Bento Grid</title>
+    <style>
+        .container{
+            background-color: black;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(7, 100px);
+            grid-template-rows: repeat(4, 100px);
+            grid-gap: 7px;
+            padding-top: 8%;
+            padding-left: 20%;
+            
+        }
+        .items{
+            background-color: #D3D3D3;
+            border-radius: 10px;
+            padding: 5px;
+            text-align: baseline;
+            font-size: 20px;
+
+        }
+        #box4{
+            grid-column: span 2;
+        }
+        #box5{
+            grid-column: span 2;
+        }
+        #box6{
+            grid-column: span 2;
+        }
+        #box7{
+            grid-column: span 3;
+            grid-row: span 2; 
+        }
+        #box8{
+            grid-row: span 2;
+        }
+        #box9{
+            grid-row: span 2;
+        }
+        #box12{
+            grid-column: span 2;
+        }
+        #box13{
+            grid-column: span 3;
+        }
+        #box14{
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items" id="box1">1</div>
+        <div class="items" id="box2">2</div>
+        <div class="items" id="box3">3</div>
+        <div class="items" id="box4">4</div>
+        <div class="items" id="box5">5</div>
+        <div class="items" id="box6">6</div>
+        <div class="items" id="box7">7</div>
+        <div class="items" id="box8">8</div>
+        <div class="items" id="box9">9</div>
+        <div class="items" id="box10">10</div>
+        <div class="items" id="box11">11</div>
+        <div class="items" id="box12">12</div>
+        <div class="items" id="box13">13</div>
+        <div class="items" id="box14">14</div>
+    </div>
+</body>
+</html>

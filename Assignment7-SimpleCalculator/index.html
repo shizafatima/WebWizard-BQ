@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #2b2d42, #1a1c2c);
+        }
+
+        .calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input,
+        select {
+            padding: 10px;
+            margin: 10px 5px;
+            width: 120px;
+            font-size: 16px;
+            border-radius: 9px;
+            border: gray 1px solid;
+        }
+        #calculate{
+            padding: 10px;
+            margin: 10px 5px;
+            width: 120px;
+            font-size: 16px;
+            border-radius: 18px;
+            border: none;
+            background-color: rgba(16, 88, 211, 0.913);
+            color: white;
+        }
+
+        #calculate:hover{
+            background-color: rgba(59, 113, 207, 0.913);
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <h2>Simple Calculator</h2>
+        <input type="text" id="inputA" placeholder="First number">
+        <select id="operator" style="width: 50px;">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" id="inputB" placeholder="Second number">
+        <br>
+        <button id="calculate" onclick="calculate()">Calculate</button>
+        <div id="result"></div>
+    </div>
+</body>
+<script src="./app.js"></script>
+
+</html>

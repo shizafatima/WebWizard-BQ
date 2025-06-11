@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body {
+            background-color: #212121;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #registrationform {
+            background-color: white;
+            padding: 20px;
+            width: 300px;
+            margin: 20vh auto 0 auto;
+            border: 4px;
+            font-size: 13px;
+            border-radius: 10px;
+        }
+
+        #registrationform  h1 {
+            text-align: center;
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+
+
+        }
+
+        label {
+            margin: 3px;
+        }
+
+        #sign-up {
+            background-color: rgb(41, 102, 234);
+            width: 100%;
+            color: #fff;
+            border-radius: 6px;
+            text-align: center;
+            padding: 5px;
+            margin-top: 10px;
+            border: none;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" id="registrationform">
+            <h1>Registration</h1>
+            <div class="input">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+                <span class="error" id="error_user"></span>
+
+            </div>
+
+
+            <div class="input">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+                <span class="error" id="error_mail"></span>
+            </div>
+
+
+            <div class="input">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <span class="error" id="error_pass"></span>
+            </div>
+
+
+            <div class="input">
+                <label for="password2">Confirm Password</label>
+                <input type="password" id="password2" name="password2">
+                <span class="error" id="error_cpass"></span>
+            </div>
+
+            <button type="submit" id="sign-up">Sign Up</button>
+    </div>
+    </form>
+
+</body>
+<script>
+    const setError = function (id, display_error) {
+        const element = document.getElementById(id);
+        element.innerHTML = display_error;
+    }
+    function clearError() {
+        document.querySelectorAll(".error").forEach(span => {
+            span.innerHTML = "";
+        });
+    }
+
+    const form = document.getElementById("registrationform")
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        clearError();
+
+        if (validateForm()) {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            saveUserData(email, password);
+
+
+            alert("Registration done succesfully")
+
+            window.location.href = "login.html";
+        };
+    });
+
+    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+
+
+    const validateForm = function () {
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const confirm_password = document.getElementById("password2").value.trim();
+
+        let returnvalue = true;
+        if (username == "") {
+            setError("error_user", "Username is required")
+            returnvalue = false;
+        }
+
+        if (!emailRegEx.test(email)) {
+            setError("error_mail", "Please enter a valid email address")
+            returnvalue = false;
+        } else {
+            setError("error_mail", "")
+        }
+
+        if (!passwordRegEx.test(password)) {
+            setError("error_pass", "Password must be at least 8 characters and include uppercase, lowercase, number, and special character.")
+            returnvalue = false;
+        } else {
+            setError("error_pass", "");
+        }
+
+
+        if (confirm_password !== password) {
+            setError("error_cpass", "Password do not match")
+            returnvalue = false;
+        } else {
+            setError("error_cpass", "");
+
+        }
+        return returnvalue;
+    }
+
+</script>
+<script src="localstorage.js"></script>
+
+</html>

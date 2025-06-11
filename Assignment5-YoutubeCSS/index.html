@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube using CSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+
+        }
+
+
+        .toggleBtn {
+            background-color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: larger;
+        } /* done */
+
+        #toggle-button {
+            align-items: baseline;
+            justify-content: baseline;
+        } /* done */
+
+        .sidebar {
+            padding-top: 10px;
+            width: 250px;
+            background-color: #fff;
+            border-right: 1px solid #ddd;
+            height: 100vh;
+            overflow: auto;
+
+        } /*done */
+
+        .sidebar li {
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        } /*done */
+
+        .sidebar ul {
+            list-style: none;
+        } /*done */
+
+        .sidebar h4 {
+            padding: 5px;
+            font-size: 15px;
+        } /*done */
+
+        .sidebar ul li:hover {
+            background-color: #ddd;
+            border-radius: 8px;
+        }  /*done */
+        a{
+            text-decoration: none;
+            color: black;
+        } /*done */
+
+        img {
+            align-items: baseline;
+            justify-content: baseline;
+        } /*done */
+
+
+        /* css of navbar */
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        } /*done */
+
+        .toggleBtn {
+            font-size: 24px;
+            cursor: pointer;
+            margin-right: 16px;
+        } /* done */
+
+        .search-bar {
+            display: flex;
+            max-width: 600px;
+        } /*done */
+
+        .search-bar input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-right: none;
+            border-radius: 20px 0 0 20px;
+            outline: none;
+
+        } /*done */
+
+        .search-bar button {
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            border-left: none;
+            background-color: #f8f8f8;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+        } /*done */
+
+        .search-bar button[type="submit"]:hover {
+            background-color: #ddd;
+        } /* done */
+
+        .right-section button:hover {
+            background-color: #ddd;
+
+        } /*done */
+
+        .right-btn {
+            margin-left: 12px;
+            padding: 8px 12px;
+            background-color: transparent;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            border-radius: 15px;
+        } /*done */
+
+        .bell {
+            background-color: transparent;
+            border: none;
+            margin-left: 2px;
+            padding: 8px 8px;
+        } /*done */
+
+        .bell:hover {
+            background-color: #ddd;
+            border-radius: 20px;
+        } /*done */
+
+        .main-container {
+            display: flex;
+        } /*done */
+
+        .main-content {
+            flex: 1;
+            padding: 16px;
+            height: 100vh;
+            overflow-y: auto;
+        } /*done */
+
+        .filter-btn {
+            margin-left: 5px;
+            padding: 8px 12px;
+            background-color: #e7e6e6;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            gap: 15px;
+            margin-bottom: 5px;
+        } /*done */
+
+        .filter-btn:hover {
+            background-color: #ddd;
+        } /*done */
+
+        #filter-active {
+            background-color: black;
+            color: white;
+        } /*done */
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 310px);
+            grid-template-rows: repeat(2, 310px);
+            grid-gap: 15px;
+        } /*done */
+
+        .video-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            padding-bottom: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+        } /*done */
+
+        .video-card img {
+            width: 100%;
+            height: auto;
+
+        } /*done */
+
+        .video-card h5 {
+            margin: 0 8px;
+            font-size: 12px;
+            padding: 5px;
+        } /*done */
+
+        .video-card p {
+            margin: 0 8px;
+            font-size: 11px;
+            color: #606060;
+            padding: 5px;
+        } /*done */
+        
+
+        .video-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        } /*done */
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="left-section">
+            <button class="toggleBtn" id="toggle-button">&#9776;</button>
+            <img src="images\youtube logo.jpg" alt=" logo" width="80px" height="20px">
+        </div>
+
+        <div class="center-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="right-section">
+
+            <button class="right-btn">+ Create</button>
+            <button class="bell"><i style="font-size:15px; margin-right: 0; margin-left: 2px;"
+                    class="fa">&#xf0f3;</i></button>
+            <button class="right-btn"> Sign in</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shorts</a></li>
+                <li><a href="#">Subscriptions</a></li>
+            </ul>
+
+            <button class="toggleBtn">
+                <h4>You</h4>
+            </button>
+            <ul>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Playlists</a></li>
+                <li><a href="#">Your videos</a></li>
+                <li><a href="#">Watch later</a></li>
+                <li><a href="#">Liked videos</a></li>
+            </ul>
+
+            <button class="toggleBtn">
+                <h4>Subscriptions</h4>
+            </button>
+
+            <ul style="list-style: none;">
+                <li><a href="#">Panaversity Urdu</a></li>
+                <li><a href="#">Apna College</a></li>
+                <li><a href="#">Gate Smashers</a></li>
+                <li><a href="#">CodeWithHarry</a></li>
+                <li><a href="#">Tech With Tim</a></li>
+            </ul>
+
+            <button class="toggleBtn">
+                <h4>Explore</h4>
+            </button>
+            <ul>
+                <li><a href="#">Trending</a></li>
+                <li><a href="#">Music</a></li>
+                <li><a href="#">Gaming</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Sports</a></li>
+            </ul>
+
+            <button class="toggleBtn">
+                <h4>More from YouTube</h4>
+            </button>
+            <ul>
+                <li><a href="#">YouTube Premium</a></li>
+                <li><a href="#">YouTube Studio</a></li>
+                <li><a href="#">YouTube Music</a></li>
+                <li><a href="#">YouTube Kids</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Report History</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Send feedback</a></li>
+            </ul>
+        </div>
+
+
+        <div class="main-content">
+            <div class="filter-bar">
+                <button class="filter-btn" id="filter-active">All</button>
+                <button class="filter-btn">AI</button>
+                <button class="filter-btn">Computer Programming</button>
+                <button class="filter-btn">News</button>
+                <button class="filter-btn">Past Papers</button>
+                <button class="filter-btn">Live</button>
+                <button class="filter-btn">Podcast</button>
+                <button class="filter-btn">Pakistani dramas</button>
+                <button class="filter-btn">Recently Uploaded</button>
+                <button class="filter-btn">Watched</button>
+            </div>
+
+            <div class="grid-container">
+                <div class="video-card" id="card1">
+                    <img src="images\Parwarish.jpg" alt="parwarish">
+                    <h5>Parwarish Episode 3 | Aina Asif | Samar Jafri | 14 April 2025 | ARY Digital Drama</h5>
+                    <p>ARY Digital HD • 902K views • 3 hours ago</p>
+                </div>
+                <div class="video-card" id="card2">
+                    <img src="images\AIAgents.jpg" alt="Ai-agents">
+                    <h5>What are AI Agents?</h5>
+                    <p>IBM Techonology • 1.4M views • 8 months ago</p>
+                </div>
+
+                <div class="video-card" id="card3">
+                    <img src="images\codewithharry.jpg" alt="codeiwthharry">
+                    <h5>The Ultimate Python Programming Roadmap (Before you Start)🐍</h5>
+                    <p>CodeWithHarry • 957K views • 11 months ago</p>
+                </div>
+
+                <div class="video-card" id="card3">
+                    <img src="images\telefilm.jpg" alt="telefilm">
+                    <h5>TELEFILM HANGOR S-131 | 1971 WAR | TRUE STORY | PAKISTAN NAVY SUBMARINE FORCE</h5>
+                    <p>Pakistan Navy • 4.5M views • 3 years ago</p>
+                </div>
+
+                <div class="video-card" id="card4">
+                    <img src="images\ielts.jpg" alt="ielts">
+                    <h5>IELTS Speaking test band score of 9 with feedback</h5>
+                    <p>Ross Ielts Academy • 10M views • 4 years ago </p>
+                </div>
+                <div class="video-card" id="card5">
+                    <img src="images\jhol.jpg" alt="jhol">
+                    <h5>Jhol x Ishq Mashup | Amtee | Maanu x Annural Khalid | Faheem Abdullah | Tujhe Bhula Diya</h5>
+                    <p> AMTEE • 393K views • 10 days ago</p>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

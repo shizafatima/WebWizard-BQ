@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            background-color: #212121;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #loginform {
+            background-color: white;
+            padding: 20px;
+            width: 300px;
+            margin: 20vh auto 0 auto;
+            border: 4px;
+            font-size: 14px;
+            border-radius: 10px;
+        }
+
+        #loginform h1 {
+            text-align: center;
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+
+
+        }
+
+        label {
+            margin: 3px;
+        }
+
+        #sign-in {
+            background-color: rgb(41, 102, 234);
+            width: 100%;
+            color: #fff;
+            border-radius: 6px;
+            text-align: center;
+            padding: 5px;
+            margin-top: 10px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <form action="#" id="loginform" method="post">
+            <h1>Login</h1>
+            <div class="input">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+            </div>
+
+
+            <div class="input">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button type="submit" id="sign-in">Sign In</button>
+        </form>
+    </div>
+</body>
+<script src="localstorage.js"></script>
+<script>
+    window.onload = function () {
+        const user = getUserData();
+        console.log("Loaded user:", user);
+        document.getElementById("email").value = user.email;
+        document.getElementById("password").value = user.password;
+    }
+</script>
+
+</html>

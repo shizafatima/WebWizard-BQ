@@ -1,0 +1,188 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: small;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding-top: 5px;
+}
+
+.nav-btn {
+    border: 1px solid #b9b9b9;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 4px;
+}
+
+.nav-btn:hover {
+    background-color: #b9b9b9;
+}
+
+.search-bar {
+    border: 1px solid #b9b9b9;
+    border-radius: 6px;
+    padding: 4px;
+    width: 200px;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 280px 1fr 320px;
+    gap: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.sidebar-left {
+    height: 100vh;
+    border-right: 1px solid #b9b9b9;
+    border-radius: none;
+}
+
+.sidebar-left,
+.main-content,
+.sidebar-right {
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.copilot input {
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #b9b9b9;
+    padding: 12px;
+    margin-left: 0;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+
+}
+
+.home-btn {
+    padding: 14px 14px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 0 2px #b9b9b9;
+    margin: 5px;
+}
+.home-btn:hover{
+    background-color: #f4f4f4;
+    
+}
+.menu-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-dots {
+    font-weight: bold;
+    width: 40px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.menu-dots:hover {
+    background-color: #f4f4f4;
+}
+
+
+/* Box grid inside main content */
+.box-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.box {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.box>h4 {
+    color: #3d71d9;
+}
+
+.box:hover {
+    text-decoration: underline;
+    text-decoration-color: #3d71d9;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+}
+
+#new-repo-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* .sidebar-left */
+.sidebar-left li {
+    padding: 1px;
+}
+
+.sidebar-left a:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+/* .sidebar-right  */
+.sidebar-right li {
+    color: #b9b9b9;
+}
+
+.sidebar-right a {
+    color: black;
+}
+
+.sidebar-right a:hover {
+    text-decoration: underline;
+    text-decoration-color: #3d71d9;
+    color: #3d71d9;
+    cursor: pointer;
+}
+
+.latest-changes {
+    border: 1px solid #b9b9b9;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 80px;
+
+}
